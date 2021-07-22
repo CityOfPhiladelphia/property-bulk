@@ -21,7 +21,7 @@ let config = {
   geocoder: {
     url: function (input) {
       var inputEncoded = encodeURIComponent(input);
-      return '//api.phila.gov/ais-pde/v1/search/' + inputEncoded;
+      return '//api.phila.gov/ais_dev/v1/search/' + inputEncoded;
     },
     params: {
       gatekeeperKey: process.env.VUE_APP_GATEKEEPER_KEY,
@@ -81,7 +81,7 @@ let config = {
     url: function (input) {
       let inputWithoutBlockKeyword = input.trim().toLowerCase().replace("blk" , "").replace("block", "");
       var inputEncoded = encodeURIComponent(inputWithoutBlockKeyword);
-      return 'https://api.phila.gov/ais_ps/v1/block/' + inputEncoded;
+      return 'https://api.phila.gov/ais_dev/v1/block/' + inputEncoded;
     },
     params: {
       page: 1,
@@ -90,7 +90,7 @@ let config = {
   ownerSearch: {
     url: function (input) {
       var inputEncoded = encodeURIComponent(input);
-      return 'https://api.phila.gov/ais_ps/v1/owner/' + inputEncoded;
+      return 'https://api.phila.gov/ais_dev/v1/owner/' + inputEncoded;
     },
     params: {
       gatekeeperKey: process.env.VUE_APP_GATEKEEPER_KEY,
